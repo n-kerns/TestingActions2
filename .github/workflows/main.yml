@@ -1,4 +1,4 @@
-name: Flowdock Poster (External Actions)
+name: Flowdock Poster
 on:
   pull_request:
     types: [created]
