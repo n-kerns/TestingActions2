@@ -21,5 +21,9 @@ jobs:
         uses: TechSmith/action-flowdock-usermap@1.0.0
         id: filter
     # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, ${{ steps.filter.outputs.flow }}
+      - name: Post PR to flowdock flow
+        uses: TechSmith/flowdock-post-action@1.0.0
+        with:
+          organization: techsmith
+          flowdock_api_key: ${{ secrets.FLOWDOCK_API_KEY }}
+          flow: ${{ steps.filter.outputs.flow }}
